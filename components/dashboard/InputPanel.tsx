@@ -2,6 +2,9 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
+import { Github, Linkedin, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { useRockStore } from "@/store/useRockStore";
 import {
   RMR_STRENGTH,
@@ -34,10 +37,25 @@ export function InputPanel() {
 
   return (
     <Card className="h-full border-r rounded-none shadow-none overflow-y-auto">
-      <CardHeader>
-        <CardTitle>Rock Parameters</CardTitle>
-        <CardDescription>Input field data to calculate RMR & Q-System</CardDescription>
-      </CardHeader>
+      <CardHeader className="pb-4">
+  <div className="flex items-center gap-3 mb-2">
+    <div className="relative w-10 h-10">
+      {/* Ensure logo.png is in your 'public' folder */}
+      <Image 
+        src="/logo.png" 
+        alt="RockRate Pro Logo" 
+        fill 
+        className="object-contain"
+      />
+    </div>
+    <CardTitle className="text-xl font-bold text-slate-900">
+      RockRate<span className="text-orange-600">Pro</span>
+    </CardTitle>
+  </div>
+  <CardDescription>
+    Advanced Geotechnical Analysis Suite
+  </CardDescription>
+</CardHeader>
       <CardContent className="space-y-6">
         
         <Tabs defaultValue="rmr" className="w-full">
@@ -166,6 +184,48 @@ export function InputPanel() {
 
           </TabsContent>
         </Tabs>
+
+       
+
+<div className="mt-8 pt-6 border-t border-slate-100">
+  <div className="space-y-3">
+    <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
+      Developer
+    </h4>
+
+    <div className="flex items-center gap-3">
+      <div className="h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-700">
+        AS
+      </div>
+      <div className="text-sm">
+        <p className="font-medium text-slate-900">Ayush Supakar</p>
+        <p className="text-xs text-slate-500">Mining Engineer & Dev</p>
+      </div>
+    </div>
+
+    <div className="grid grid-cols-2 gap-2">
+      <Button variant="outline" size="sm" className="w-full text-xs" asChild>
+        <a href="https://www.linkedin.com/in/ayush-anshuman-supakar-4b71681b8/" target="_blank" rel="noreferrer">
+          <Linkedin className="mr-2 h-3 w-3" />
+          LinkedIn
+        </a>
+      </Button>
+      <Button variant="outline" size="sm" className="w-full text-xs" asChild>
+        <a href="https://github.com/AyushSupakar" target="_blank" rel="noreferrer">
+          <Github className="mr-2 h-3 w-3" />
+          GitHub
+        </a>
+      </Button>
+    </div>
+
+    <Button variant="ghost" size="sm" className="w-full text-xs text-slate-500" asChild>
+      <a href="https://www.ayushsupakar.in" target="_blank" rel="noreferrer">
+        <ExternalLink className="mr-2 h-3 w-3" />
+        Portfolio Website
+      </a>
+    </Button>
+  </div>
+</div>
       </CardContent>
     </Card>
   );
