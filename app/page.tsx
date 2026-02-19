@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-slate-50 flex flex-col md:flex-row">
       {/* Left Sidebar - Input */}
-      <div className="w-full md:w-[400px] bg-white h-screen sticky top-0 border-r z-10 overflow-hidden">
+      <div className="w-full md:w-[400px] bg-white md:h-screen md:sticky md:top-0 border-b md:border-r md:border-b-0 z-10">
         <InputPanel />
       </div>
 
